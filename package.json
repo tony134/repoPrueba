@@ -1,0 +1,15 @@
+{
+  "name": "prueba69",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.36",
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.9",
+    "angular-meteor": "^1.3.12",
+    "angular-ui-router": "^1.0.3",
+    "meteor-node-stubs": "^0.3.2"
+  }
+}
