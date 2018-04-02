@@ -3,11 +3,12 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from '@uirouter/angularjs';
 import homeMapu from '../imports/components/home/home';
 import regMapu from '/imports/components/registros/registros'
+import bitacoraMapu from '/imports/components/bitacora/bitacora'
 
 
 
 
-var app = angular.module('mapu', [angularMeteor, uiRouter, homeMapu.name, regMapu.name]);
+var app = angular.module('mapu', [angularMeteor, uiRouter, homeMapu.name, regMapu.name, bitacoraMapu.name]);
 
 $('.button-collapse').sideNav({
     menuWidth: 300, // Default is 300
@@ -41,6 +42,11 @@ app.config(function($stateProvider, $urlRouterProvider){
         name : "registros",
 	 	url : "/registros",
 	 	component : 'regMapu'
+     })
+     .state({
+        name : "bitacora",
+	 	url : "/bitacora",
+	 	component : 'bitacoraMapu'
 	 })
 	
 	

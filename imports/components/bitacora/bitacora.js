@@ -1,7 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
-import {Tasks} from '../../api/tasks.js';
-import template from './registros.html';
+import {Bitacoras} from '../../api/bitacoras';
+import template from './bitacora.html';
 
 
  $('.button-collapse').sideNav({
@@ -23,17 +23,18 @@ class Controlador {
 	constructor($scope){
 
     $scope.helpers({
-      mapachelist(){
-        return Tasks.find({});
+      mapacheCora(){
+        return Bitacoras.find({});
       }
     });
     $scope.insertInfo = function(){
 		
 			Tasks.insert({
-				id_emp : $scope.inI,
+				id_cont : $scope.inI,
 				nombre : $scope.nameInfo,
-				cantidad : $scope.quanInfo,
-				extra : $scope.extraInfo,
+				fecha : $scope.quanInfo,
+                instrumento : $scope.instrum,
+                textoclase : $scope.infoExtra
 
 			});
 			Materialize.toast('objeto agregado.', 4000);
@@ -70,6 +71,6 @@ class Controlador {
 		
 	
 
-export default angular.module('regMod', [angularMeteor]).component('regMapu', {
-	templateUrl : 'imports/components/registros/registros.html', controller : ["$scope",Controlador]
+export default angular.module('bitMod', [angularMeteor]).component('bitacoraMapu', {
+	templateUrl : 'imports/components/bitacora/bitacora.html', controller : ["$scope",Controlador]
 });

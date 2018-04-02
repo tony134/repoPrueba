@@ -1,3 +1,46 @@
-<div>
-    <h2>que rollo</h2>
+<div class="container">
+	<div class="card-panel teal white-text">
+		<header>
+			<h3>Insertar Información</h3>
+		</header>
+		<div class="row">
+			<div class="col l10 m10 s12">
+				<p>ID
+					<input type="number" ng-model="inI">
+				</p>
+				<p>Nombre:
+					<input type="text" ng-model="nameInfo">
+				</p>
+				<p>Cantidad:
+					<input type="number" ng-model="quanInfo">
+				</p>
+				<p>Extra:
+					<input type="text" ng-model="extraInfo">
+				</p>
+				<div class="center">
+					<button class="btn" ng-click="insertInfo()">Insert</button>
+					<button class="btn" ng-click="editarInfo()">Editar</button>
+				</div>
+			</div>
+		</div>
+		<h4>lista de objetos:</h4>
+		<table class="bordered highlighted">
+			<tr>
+				<th>#</th>
+				<th>id</th>
+				<th>Nombre</th>
+				<th>Cantidad</th>
+				<th>Extra</th>
+
+			</tr>
+			<tr ng-repeat="obj in mapachelist">
+				<td>{{$index+1}}</td>
+				<td>{{obj.id_emp}}</td>
+				<td>{{obj.nombre}}</td>
+				<td>{{obj.cantidad}}</td>
+				<td>{{obj.extra}}</td>
+
+			</tr>
+		</table>
+	</div>
 </div>
